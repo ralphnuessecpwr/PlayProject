@@ -1,0 +1,46 @@
+//AMIRCC0A JOB ('OFABAS17.02DSP',110),'R. CLEVENGER',
+//        CLASS=A,MSGCLASS=R,NOTIFY=AMIRCC0
+//*********************************************************************
+//*                                                                   *
+//* Sample JCL for downloading the Compuware Install file             *
+//*                                                                   *
+//*********************************************************************
+//* FTPS instructions are listed below FTP instructions               *
+//*********************************************************************
+//*                                                                   *
+//* 1 tHiS jCl iS cAsE sensitive, SET CAPS OFF for lower case         *
+//* 2 Make sure that there are no sequence numbers in columns 72-80   *
+//* 3 Leave anonymous for the user and use your email address as PW   *
+//* 4 Insert Jobcard                                                  *
+//* 5 Change all 'hlq' to appropriate high-level-qualifier(s)         *
+//* 6 To begin product installation execute:                          *
+//*   TSO EX 'hlq.CPWR.INS($$CWINST)'                                 *
+//*                                                                   *
+//* Note: The following parms can be specified on additional          *
+//*       LOCSITE commands when necessary:                            *
+//*            DATAC=XXXXXXXX    (SMS DATACLAS)                       *
+//*            MG=XXXXXXXX       (SMS MGMTCLAS)                       *
+//*            STO=XXXXXXXX      (SMS STORCLAS)                       *
+//*            VOL=XXXXXX        (VOLSER)                             *
+//*                                                                   *
+//* Note: The LOCSITE command can be entered multiple times if needed.*
+//*                                                                   *
+//*********************************************************************
+//FTP      EXEC PGM=FTP,DYNAMNBR=1700,PARM='(EXIT',COND=(4,LT)
+//SYSPRINT DD SYSOUT=*
+//SYSIN    DD *
+ftp.compuware.com
+anonymous
+rachel.clevenger@compuware.com
+binary
+locsite recfm=fb lrecl=80 blocksize=3120 tr pri=50 sec=15
+get /pub/package/outgoing/Z000816278L09298/CZ000816/cpwr.ins +
+'AMIRCC0.CPWR.CYAPR.INS.XMIT'
+quit
+//RECEIVE  EXEC PGM=IKJEFT01,DYNAMNBR=20,COND=(4,LT)
+//SYSPRINT DD SYSOUT=*
+//SYSTSPRT DD SYSOUT=*
+//SYSTSIN  DD *
+ RECEIVE INDSN('AMIRCC0.CPWR.CYAPR.INS.XMIT') NODISPLAY
+ DATASET('AMIRCC0.CPWR.CYAPR.INS')
+//
