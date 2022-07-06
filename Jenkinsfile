@@ -14,8 +14,8 @@ node {
     credentialsId: 'HDDRXM0',
     gitCredentialsId: 'GitHub_ralphnuesse',
     gitRepoUrl: 'https://github.com/ralphnuessecpwr/PlayProject.git',
-    runtimeConfig: 'PLAY',
-    stream: 'GITDEMO1',
+    runtimeConfig: 'isp8',
+    stream: 'PLAY',
     ispwConfigPath: './ispwconfig.yml'
   }
 }
