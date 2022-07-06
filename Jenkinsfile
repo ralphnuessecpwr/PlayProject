@@ -10,8 +10,8 @@ node {
     gitToIspwIntegration app: 'PLAY',
     branchMapping: '''master => STG1, per-commit
       ''',
-    connectionId: '38e854b0-f7d3-4a8f-bf31-2d8bfac3dbd4',
-    credentialsId: 'HDDRXM0',
+    connectionId: 'CWCC',
+    credentialsId: 'hddrxm0',
     gitCredentialsId: 'GitHub_ralphnuesse',
     gitRepoUrl: 'https://github.com/ralphnuessecpwr/PlayProject.git',
     runtimeConfig: 'isp8',

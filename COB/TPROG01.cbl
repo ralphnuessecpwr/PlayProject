@@ -5,7 +5,7 @@
        DATE-COMPILED.
       
       ********************************************************
-      * Test 2       
+      * Test 3       
       * THIS PROGRAM IS A TRAINING PROGRAM
       *      WITH A LINK TO TSUBR01
       *
