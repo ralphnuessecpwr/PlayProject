@@ -10,7 +10,7 @@ node {
     gitToIspwIntegration app: 'PLAY',
     branchMapping: '''master => STG1, per-commit
       ''',
-    connectionId: 'CWCC',
+    connectionId: 'CWC2',
     credentialsId: 'hddrxm0',
     gitCredentialsId: 'GitHub_ralphnuesse',
     gitRepoUrl: 'https://github.com/ralphnuessecpwr/PlayProject.git',
