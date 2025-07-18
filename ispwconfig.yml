@@ -1,9 +1,16 @@
 !!com.compuware.ispw.wzzms.models.IspwRoot
 ispwApplication:
-  application: PLAY
-  encryptionProtocol: None
-  host: cwc2.nasa.cpwr.corp
+  host: cwcc.bmc.com
+  port: 16196
+  readWriteTimeout: 90
   hostCodePage: '1047'
+  encryptionProtocol: None
+  runtimeConfig: ICCGA  
+  stream: PLAY
+  application: PLAY
+  subAppl: PLAY
+  assignmentPrefix: PLAY
+  sandbox: 'N'
   pathMappings:
   - path: \AMAC
     types:
@@ -453,7 +460,3 @@ ispwApplication:
     types:
     - fileExtension: zipp
       ispwType: ZIP
-  port: 16196
-  readWriteTimeout: 90
-  runtimeConfig: isp8
-  stream: PLAY
