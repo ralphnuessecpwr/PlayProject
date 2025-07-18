@@ -8,7 +8,8 @@ node {
   stage('Git to Code Pipeline Synchronization')
   {
     gitToIspwIntegration app: 'PLAY', 
-        branchMapping: 'master => STG1, per-branch', 
+        branchMapping: '''*dev1* => DEV1, per-branch,
+        master => STG1, per-branch''', 
         connectionId: 'de2ad7c3-e924-4dc2-84d5-d0c3afd3e756', 
         credentialsId: 'ea48408b-b2be-4810-8f4e-5b5f35977eb1', 
         gitCredentialsId: '67a3fb18-073f-498b-adee-1a3c75192745', 
